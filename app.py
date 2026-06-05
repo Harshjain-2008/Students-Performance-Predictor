@@ -12,7 +12,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-from src.model import (
+from model import (
     StudentModel,
     load_dataset_from_bytes,
     auto_detect_target,
@@ -20,7 +20,7 @@ from src.model import (
     score_to_grade,
     score_to_passfail,
 )
-from src.utils import (
+from utils import (
     build_sample_dataframe,
     feature_icon,
     feature_hint,
