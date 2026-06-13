@@ -43,7 +43,7 @@ def grade_line(score):
     grade = score_to_grade(score)
     emoji = GRADE_EMOJI[grade]
     desc  = GRADE_DESC[grade]
-    pf    = "✅ PASS" if score >= 40 else "❌ FAIL"
+    pf    = " ✅ PASS" if score >= 40 else " FAIL"
     return grade, emoji, desc, pf
 
 # ── session state ─────────────────────────────────────────────
@@ -57,12 +57,12 @@ def mdl() -> StudentModel:
 # SIDEBAR  (pure Python Streamlit only)
 # ══════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.title("🎓 Student Predictor")
+    st.title(" Student Predictor")
     st.caption("Train a model on your data, then predict student scores.")
     st.divider()
 
     # ── section 1: load data ──────────────────────────────────
-    st.subheader("📂 Load Dataset")
+    st.subheader(" Load Dataset")
 
     uploaded = st.file_uploader(
         "Upload your CSV or Excel file",
@@ -72,7 +72,7 @@ with st.sidebar:
 
     st.caption("— or —")
 
-    if st.button("▶️  Use Built-in Sample Data", use_container_width=True):
+    if st.button("  Use Built-in Sample Data", use_container_width=True):
         df_s     = build_sample_dataframe()
         target   = "final_score"
         features = ["study_hours", "previous_score", "attendance",
